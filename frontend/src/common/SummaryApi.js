@@ -1,6 +1,7 @@
-export const baseURL = import.meta.env.VITE_BACKEND_URL
-//"http://localhost:8080"
+export const baseURL = "http://localhost:8080"
 
+//import.meta.env.VITE_BACKEND_URL
+//
 const SummaryApi = {
     register : {
         url : '/api/user/register',
