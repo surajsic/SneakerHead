@@ -26,106 +26,106 @@ import Cancel from '../pages/Cancel';
 
 const router = createBrowserRouter([
     {
-        path:'/',
+        path: '/',
         element: <App />,
-        children:[
+        children: [
             {
-                path:"",
-                element:<Home />
+                path: "",
+                element: <Home />
             },
             {
-                path:"search",
-                element:<SearchPage />
+                path: "search",
+                element: <SearchPage />
             },
             {
-                path:"login",
-                element:<Login />
+                path: "login",
+                element: <Login />
             },
             {
-                path:"register",
-                element:<Register />
+                path: "register",
+                element: <Register />
             },
             {
-                path:"forgot-password",
-                element:<ForgotPassword />
+                path: "forgot-password",
+                element: <ForgotPassword />
             },
             {
-                path:"verification-otp",
-                element:<OtpVerification />
+                path: "verification-otp",
+                element: <OtpVerification />
             },
-            
+
             {
-                path:"reset-password",
-                element:<ResetPassword />
-            },
-            {
-                path : "user",
-                element : <UserMenuMobile />
+                path: "reset-password",
+                element: <ResetPassword />
             },
             {
-                path:"dashboard",
-                element : <Dashboard />,
+                path: "user",
+                element: <UserMenuMobile />
+            },
+            {
+                path: "dashboard",
+                element: <Dashboard />,
                 children: [
                     {
                         path: "profile",
-                        element : <Profile />
+                        element: <Profile />
                     },
                     {
                         path: "address",
-                        element : <Address />
+                        element: <Address />
                     },
                     {
                         path: "myorders",
-                        element : <MyOrders />
+                        element: <MyOrders />
                     },
                     {
-                        path : 'category',
-                        element : <AdminPermision><CategoryPage /></AdminPermision> 
+                        path: 'category',
+                        element: <AdminPermision><CategoryPage /></AdminPermision>
                     },
                     {
-                        path : "subcategory",
-                        element : <AdminPermision><SubCategoryPage /></AdminPermision>
+                        path: "subcategory",
+                        element: <AdminPermision><SubCategoryPage /></AdminPermision>
                     },
                     {
-                        path : 'upload-product',
-                        element : <AdminPermision><UploadProduct /></AdminPermision>
+                        path: 'upload-product',
+                        element: <AdminPermision><UploadProduct /></AdminPermision>
                     },
                     {
-                        path : 'product',
-                        element : <AdminPermision><ProductAdmin /></AdminPermision>
+                        path: 'product',
+                        element: <AdminPermision><ProductAdmin /></AdminPermision>
+                    },
+                ]
+            },
+            {
+                path: ":category",
+                children: [
+                    {
+                        path: ":subCategory",
+                        element: <ProductListPage />
                     }
+                ]
+            },
+            {
+                path: "product/:product",
+                element: <ProductDisplayPage />
+            },
+            {
+                path: 'cart',
+                element: <CartMobile />
+            },
+            {
+                path: "checkout",
+                element: <CheckoutPage />
+            },
+            {
+                path: "success",
+                element: <Success />
+            },
+            {
+                path: 'cancel',
+                element: <Cancel />
+            },
 
-                ]
-            },
-            {
-                path:":category",
-                children:[
-                    {
-                        path : ":subCategory",
-                        element : <ProductListPage/>
-                    }
-                ]
-            },
-            {
-                path : "product/:product",
-                element : <ProductDisplayPage/>
-            },
-            {
-                path : 'cart',
-                element : <CartMobile />
-            },
-            {
-                path : "checkout",
-                element : <CheckoutPage />
-            },
-            {
-                path : "success",
-                element : <Success />
-            },
-            {
-                path : 'cancel',
-                element : <Cancel />
-            }
 
 
         ]
