@@ -28,7 +28,7 @@ app.use(helmet({
     crossOriginResourcePolicy: false,
 }))
 
-const PORT= process.env.PORT
+const PORT= 8080
 
 app.get('/',(req, res)=>{
     res.json({
@@ -45,8 +45,7 @@ app.use("/api/cart", cartRouter)
 app.use("/api/address", addressRouter)
 app.use('/api/order', orderRouter)
 
-
-
+  
 
 connectDB().then(()=>{
     app.listen(PORT, ()=>{
